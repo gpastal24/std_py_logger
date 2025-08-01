@@ -11,7 +11,7 @@ pip install .
 ## Usage
 
 ```python
-from py_logger import get_logger
+from std_py_logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -23,7 +23,7 @@ logger.critical("This is a critical message.")
 ```
 
 ```python
-from py_logger import get_logger
+from std_py_logger import get_logger
 
 logger = get_logger(__name__, log_file=True) # logs to file
 
