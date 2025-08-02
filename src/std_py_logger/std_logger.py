@@ -1,6 +1,7 @@
 import logging
 import sys
 from datetime import datetime
+import inspect
 
 class ColoredFormatter(logging.Formatter):
     """
@@ -69,7 +70,12 @@ class PrintLogger:
 
     def write(self, message):
         if message.strip():
-            self.logger.info(message.strip())
+            frame = inspect.currentframe()
+            while frame and inspect.getmodule(frame).__name__.startswith('std_py_logger'):
+                frame = frame.f_back
+            
+            filename = frame.f_code.co_filename if frame else 'unknown'
+            self.logger.info(f"[{filename}] {message.strip()}")
 
     def flush(self):
         pass
