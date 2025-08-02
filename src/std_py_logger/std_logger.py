@@ -75,7 +75,8 @@ class PrintLogger:
                 frame = frame.f_back
             
             filename = frame.f_code.co_filename if frame else 'unknown'
-            self.logger.info(f"[{filename}] {message.strip()}")
+            lineno = frame.f_lineno if frame else 0
+            self.logger.info(f"{message.strip()} - {filename}:{lineno}")
 
     def flush(self):
         pass
