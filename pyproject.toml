@@ -18,8 +18,8 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/gpastal24/std-py-logger"
-"Bug Tracker" = "https://github.com/gpastal24/std-py-logger/issues"
+"Homepage" = "https://github.com/gpastal24/std_py_logger"
+"Bug Tracker" = "https://github.com/gpastal24/std_py_logger/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/std_py_logger"]
